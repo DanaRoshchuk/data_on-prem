@@ -27,14 +27,14 @@ resource "null_resource" "install_requests" {
   depends_on = [ scalr_environment.report_env ]
 }
 
-resource "null_resource" "wait_for_module" {
+/*resource "null_resource" "wait_for_module" {
   count = 21
   depends_on = [ scalr_environment.report_env, scalr_module.report_module ]
   provisioner "local-exec" {
     command = "sed 's#url = \"your_url_here\"#url = \"${var.scalr_url}/api/iacp/v3/modules/${scalr_module.report_module[count.index].id}\"#; s#bearer_token = \"your_bearer_token_here\"#bearer_token = \"${var.token}\"#' wait_for_module.py > wait_for_module_${count.index}.py && python3 wait_for_module_${count.index}.py"
   }
 }
-
+*/
 data "scalr_module_version" "report_get_modver_id" {
   count   = 21
   source  = "${scalr_environment.report_env[count.index].id}/${var.module_name}/${var.module_provider}"
