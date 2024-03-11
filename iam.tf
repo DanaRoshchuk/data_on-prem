@@ -31,7 +31,10 @@ resource "scalr_access_policy" "access-policy" {
 }
 
 resource "scalr_service_account" "no_permissions_service_acc" {
-  count = 2
   name   = "service-account-${formatdate("DDMMYYYY", timestamp())}"
+  status = "Active"
+}
+resource "scalr_service_account" "service_acc" {
+  name   = "sa-${formatdate("DDMMYYYY", timestamp())}"
   status = "Active"
 }
