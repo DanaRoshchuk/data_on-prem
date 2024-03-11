@@ -19,11 +19,11 @@ resource "scalr_role" "role" {
 resource "scalr_access_policy" "access-policy" {
   subject {
     type = "team"
-    id   = scalr_iam_team.team.id
+    id   = scalr_iam_team.team.id[1]
   }
   scope {
     type = "workspace"
-    id   = scalr_workspace.ws_vcs.id[1]
+    id   = scalr_workspace.ws_vcs.id
   }
 
   role_ids = [
