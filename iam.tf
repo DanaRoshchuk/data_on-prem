@@ -23,7 +23,7 @@ resource "scalr_access_policy" "access-policy" {
   }
   scope {
     type = "workspace"
-    id   = scalr_workspace.ws_vcs.id
+    id   = scalr_workspace.ws_vcs.id[1]
   }
 
   role_ids = [
