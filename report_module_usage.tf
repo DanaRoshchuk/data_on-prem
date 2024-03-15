@@ -35,19 +35,19 @@ resource "null_resource" "install_requests" {
   }
 }
 */
-data "scalr_module_version" "report_get_modver_id" {
+/*data "scalr_module_version" "report_get_modver_id" {
   count   = 21
   source  = "${scalr_environment.report_env[count.index].id}/${var.module_name}/${var.module_provider}"
   version = var.module_existing_version_number
   #depends_on = [ null_resource.wait_for_module]
-}
+}*/
 
 resource "scalr_workspace" "report_ws" {
   count = 21
   environment_id = scalr_environment.report_env[count.index].id
 
   name              = "REPORTS_module_ws_${count.index}"
-  module_version_id = data.scalr_module_version.report_get_modver_id[count.index].id
+  #module_version_id = data.scalr_module_version.report_get_modver_id[count.index].id
 }
 
 variable "token" {
