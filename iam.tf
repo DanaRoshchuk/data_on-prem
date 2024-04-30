@@ -34,7 +34,12 @@ resource "scalr_service_account" "no_permissions_service_acc" {
   name   = "service-account-${formatdate("DDMMYYYY", timestamp())}"
   status = "Active"
 }
-resource "scalr_service_account" "service_acc" {
+/*resource "scalr_service_account" "service_acc" {
   name   = "sa-${formatdate("DDMMYYYY", timestamp())}"
+  status = "Active"
+}*/
+
+resource "scalr_service_account" "service_acc" {
+  name   = "new-${formatdate("DDMMYYYY", timestamp())}"
   status = "Active"
 }
