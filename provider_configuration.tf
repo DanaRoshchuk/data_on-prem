@@ -2,7 +2,7 @@ resource "scalr_provider_configuration" "pcfg_gcp" {
   name         = "provider_config_GCP_${formatdate("DDMMYYYY", timestamp())}"
   environments = [scalr_environment.env_no_tag.id]
   google {
-    credentials = var.pcfg_gcp_credentials
+    credentials = "${var.pcfg_gcp_credentials}"
   }
 }
 
