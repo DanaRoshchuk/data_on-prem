@@ -13,7 +13,7 @@ variable "scalr_url" {
 
 variable "opa_version" {
   description = "OPA version used to create policy group. Should be one of available with current instance."
-  default     = "0.46.0"
+  default     = "0.56.0"
 }
 
 variable "policy_vcs-repo_identifier" {
