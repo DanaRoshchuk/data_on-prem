@@ -13,4 +13,5 @@ terraform {
             version= "1.0.0-rc-SCALRCORE-31421"
         }
     }
+}
 
