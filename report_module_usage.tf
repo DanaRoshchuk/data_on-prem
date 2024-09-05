@@ -10,7 +10,7 @@ resource "scalr_environment" "report_env" {
 }
 
 resource "scalr_module" "report_module" {
-  count = 21
+  count = 1
   environment_id  = scalr_environment.report_env[count.index].id
   vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
