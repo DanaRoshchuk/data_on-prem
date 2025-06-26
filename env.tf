@@ -5,5 +5,4 @@ resource "scalr_environment" "env_tag" {
 
 resource "scalr_environment" "env_no_tag" {
   name                    = "env_no_tag_${formatdate("DDMMYYYY", timestamp())}"
-  cost_estimation_enabled = false
 }
