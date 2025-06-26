@@ -7,5 +7,6 @@ resource "scalr_webhook" "webhook" {
   max_attempts = 3
   events       = ["run:completed", "run:errored", "run:needs_attention"]
   environments = [scalr_environment.env_tag.id, scalr_environment.env_no_tag.id]
- account_id = "acc-v0oep0k2bbl3j65sb"
+  account_id   = data.scalr_current_account.account.id
 }
+data "scalr_current_account" "account" {}
